@@ -701,7 +701,7 @@ contract Metafintec is Context, IERC20, Ownable {
     address[] private _excluded;
    
     uint256 private constant MAX = ~uint256(0);
-    uint256 private _tTotal = 10000000000 *  10**18;
+    uint256 private _tTotal = 100000000000 *  10**18;
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
@@ -1171,6 +1171,10 @@ contract Metafintec is Context, IERC20, Ownable {
 
      function setLiquidityFee(uint256 newFee) external onlyOwner{
         _liquidityFee = newFee;
+    }
+
+     function setTaxFee(uint256 newFee) external onlyOwner{
+        _taxFee = newFee;
     }
 
     function setTeamFee(uint256 newFee) external onlyOwner{
